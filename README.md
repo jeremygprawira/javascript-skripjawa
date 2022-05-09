@@ -95,45 +95,110 @@ A_B = 2: // impossible
 ```
 
 ## Numbers
-### Operations
-**Addition**
+### Basic Operations
+| Operations | Code | Result | 
+|------------|------|--------|
+| addition | ```const a = 10 + 5;``` | 15 |
+| subtraction | ```const a = 10 - 5;```| 5 |
+| multiplication | ```const a = 10 * 5;``` | 50 |
+| division | ```const a = 10 / 5;``` | 2 |
+| increment | ```let a = a + 1;``` is ```let a++;``` | **(EXPLANATION)** Sort of like "addition"? I guess? |
+| decrement | ```let a = a - 1;``` is ```let a--;``` | **(EXPLANATION)** Sort of like "subtraction"? I guess? |
+
+### Float
+
+Float is more or less decimal. We could do operations such like multiplication with floats.
 ```js
-const a = 10 + 5;
-// value = 15
+const myDecimal = 4.2;
+const mul = 2.0 * 2.5;
+const quo = 4.4 / 2.0;
 ```
-**Subtractionn**
+### Remainder
+
+Remainder is literally remainder. Its the rest of the division that you did. We use ```%``` as the symbol for the remainder operation.
 ```js
-const a = 10 - 5;
-// value = 5
+const ha = 5 % 2;
+// This is 1 because the rest of the division of 5 / 2 is 1.
 ```
-**Multiplication**
+### Compound Assignment with Augmented Operations
+
+You basically simplify the addition of the variable. Let's say you have ```a = 5``` and ```a = a + 4``` you will definitely get 9 as the answer. In JavaScript this is not efficient yet. To simplify it:
 ```js
-const a = 10 * 5;
-// value = 50
+const a = 4;
+a += 1;
+// This brings 5
 ```
-**Division**
+You can also do it with subtraction! AND LITERALLY OTHER OPERATIONS :)
 ```js
-const a = 10 / 5;
-// value = 2
+const b = 5;
+b -= 4;
+// This yield 1
 ```
-**Increment**
-Sort of like "addition"? I guess?
+## Strings 101
+### Escape String Literal
+This happens when we want to put quote marks on our string. To solve it, we can use ```\``` to avoid it. To use it:
 ```js
-let a++;
+const a = "Jeremy said, \"abcdefh\".";
+// Both backslashes should be infront of the quote marks.
 ```
-is equal to:
+### JS Single Quotes
+The difference between double quotes and single qoute is none in JavaScript. But it is recommended, to use one type of quote when declaring string. This will affect the result aswell and also the use of ```<a>``` in which having so many characters and symbol in it. But you can still use two types of quotes as well.
 ```js
-let a = a + 1;
+const goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
+const badStr = 'Finn responds, "Let's go!"';
+// Another example: Both OK!
+const myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
+const myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
 ```
-**Decrement**
-Sort of like "addition"? I guess?
-```js
-let a--;
+### Escape String Literal: More
+Escaping is very useful for:
+- Help you to use character that feels impossible to use such as ```\r```
+- Allow represent multiple quotes without the JavaScript misunderstand it,
+
+Other escape:
+
+| Code | Output |
+|------|--------|
+| ```\'``` | single quote |
+| ```\"``` | double quote |
+| ```\\``` | backslash |
+| ```\n``` | new line |
+| ```\r``` | carriage return |
+| ```\t``` | tab |
+| ```\b``` | word boundary |
+| ```\f``` | form feed |
+
+Example:
+
+One variable for:
 ```
-is equal to:
-```js
-let a = a - 1;
+FirstLine
+    \SecondLine
+ThirdLine
 ```
 
+Answer:
+```js
+const myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
+```
 
-
+### String Concatenation
+We could use ```+``` as the **concatenation** operator.
+```js
+const a = "abc " + "def.";
+// Result: abc def.
+// SPACES DEFINITELY MATTER HERE
+```
+We could also do it with ```+=``` as the conc. operator too.
+```js
+let a = "abc ";
+a += "def.";
+// Result: abc def.
+```
+So this concetenating style could be very useful like:
+```js
+const a = " abc ";
+const b = "def " + a + " hij.";
+// Result: def abc hij.
+// SPACES DEFINITELY MATTER HERE
+```
