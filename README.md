@@ -202,3 +202,115 @@ const b = "def " + a + " hij.";
 // Result: def abc hij.
 // SPACES DEFINITELY MATTER HERE
 ```
+
+
+### Find the length of a string
+using ```.length```
+```js
+// Setup
+let lastNameLength = 0;
+const lastName = "Lovelace";
+
+lastNameLength = lastName.length;
+```
+
+### Bracket Notation in String
+In string, bracket notation is meant to find the n character of the string exist.
+```js
+const a = "abc";
+cons a1 = a[0];
+// This will yield a
+```
+Notes: In programming everything always starts from 0.
+
+To find the last notation:
+```js
+const a = "abc";
+cons a1 = a[a.length - 1];
+// This will yield c
+```
+
+### String Immutability
+JavaScript string is immutable. This simply mean that, you cannot change one partially but you have to change everything.
+```
+let a = "abc";
+a[0] = "d"; // This is impossible
+a = "dbc"; // This is possible
+```
+
+## Array
+```js
+const a = [1, "abc"];
+```
+
+### Nested Array
+This is basically **array inside an array**. This can be called as **multi-dimensional** array.
+
+ps: I don't know things like this should go consistently. Like two attributes and next three, idrk.
+```js
+const a = [["a", 1], ["b", 3]]
+```
+
+### Block Notation: Array
+Well this is to access certain array.
+```js
+const a = [1,2,3,4];
+a[0]; // show 1
+```
+
+### Modifying Array
+Oh great news, we could change parts of array not like in string where we should change the whole string in order to change a lil bit part of a string.
+```js
+const a = [2,3,4];
+a[0] = 5; // a = 5,3,4
+```
+If we want to change a multi-dimensional array then we simply could at more bracket notation in the variable. So:
+```js
+const arr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [[10, 11, 12], 13, 14]
+];
+
+arr[3]; // [[10,11,12], 13, 14]
+arr[3][0]; // [10,11,12]
+arr[3][0][1]; // 11
+```
+
+### Manipulate Array with ```.push()```
+This is the way to add another data on the end of the array. With ```.push()``` you could add one or more data(s) to the end of array. If you add **more than one** data with ```.push()``` **and the ```[]``` notation**, then you will create a **nested array**.
+```js
+const a = [1,2];
+a.push(3); // a = [1,2,3]
+
+const b = [1,2];
+b.push([4,5]); // b = [1,2,3,[4,5]]
+```
+
+### Manipulate Array with ```.unshift()```
+```.unshift()``` is the way to add data on the ***first*** of array.
+```js
+const a = [1,2,3];
+a.unshift(4);
+// result of a = [4, 1, 2, 3]
+```
+
+### Manipulate Array with ```.pop()```
+```.pop()``` is the way to remove data on the ****end**** of array.
+```js
+const a = [1,2,3];
+const b = a.pop(); // 3
+// result of a = [1, 2]
+```
+Don't worry, this is definitely working on any types of array, including multi-dimensional one.
+
+
+### Manipulate Array with ```.shift()```
+```.shift()``` is the way to remove data on the ***first*** of array.
+```js
+const a = [1,2,3];
+const b = a.shift(); // 1
+// result of a = [2, 3]
+```
+
