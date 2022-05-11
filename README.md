@@ -314,3 +314,116 @@ const b = a.shift(); // 1
 // result of a = [2, 3]
 ```
 
+## Functions
+```js
+function functionName() {
+   console.log("Hello World!");
+}
+
+functionName(); // To call the function
+```
+
+### Function: Passing Value
+To pass value we could use **parameter**. Parameter acts as the placeholder for the value that will be input to the function.
+```js
+func functionName(a, b) {
+   console.log(a, b);
+}
+
+functionName("a", "b");
+```
+
+### Function: Returning Value
+We can pass values into a function with arguments. You can use a ```return``` statement to send a value back out of a function.
+```js
+func a(b) {
+   return b + 3;
+}
+
+const c = a(5); // 8 -> You could assign it on a variable.
+```
+In short, you passed value of ```5``` to the function and returns the value of ```5 + 3```;
+
+### Function: Global Scope and Functions
+In JavaScript, ***scope*** refers to the visibility of variables. Variables which are defined outside of a function block have Global scope. This means, they can be seen everywhere in your JavaScript code.
+
+Variables which are declared without the ```let``` or ```const``` keywords are automatically created in the global scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with ```let``` or ```const```.
+
+### Function: Local Scope
+Local scope means, if you have variable inside the function then it only applies to that function only!
+```js
+function myTest() {
+  const loc = "foo";
+  console.log(loc);
+}
+
+myTest();
+console.log(loc);
+```
+
+### Function: Undefined Value - SHOULD BE BACK
+A function can include the ```return``` statement but it does not have to. In the case that the function doesn't have a ```return``` statement, when you call it, the function processes the inner code but the returned value is undefined.
+
+Example
+```js
+let sum = 0;
+
+function addSum(num) {
+  sum = sum + num;
+}
+
+addSum(3);
+```
+```addSum``` is a function without a ```return``` statement. The function will change the global sum variable but the returned value of the function is **undefined**.
+
+### Stand in Line - SHOULD BE BACK
+In Computer Science a queue is an abstract Data Structure where items are kept in order. New items can be added at the back of the queue and old items are taken off from the front of the queue.
+
+Example:
+Write a function ```nextInLine``` which takes an array (```arr```) and a number (```item```) as arguments.
+
+Add the number to the end of the array, then remove the first element of the array.
+
+The ```nextInLine``` function should then return the element that was removed.
+
+Solution:
+```js
+function nextInLine(arr, item) {
+  // Only change code below this line
+  arr.push(item);
+  const removed = arr.shift();
+  return removed;
+  // Only change code above this line
+}
+
+// Setup
+const testArr = [1, 2, 3, 4, 5];
+
+// Display code
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
+
+/*
+Result;
+Before: [1,2,3,4,5]
+1
+After: [2,3,4,5,6]
+*/
+```
+
+Explanation:
+- Push item at the end of arr.
+- Call the shift() method on arr to get the first item and store it in removed.
+- Return removed.
+
+Example Run:
+
+- Test ```nextInLine([2,1]);``` runs.
+- The ```nextInLine``` function is called. ```arr``` becomes ```[2]```. ```item``` becomes ```1```.
+- ```arr.push(item);``` Pushes ```1``` to ```[2]```. So ```arr``` is now ```[2,1]```.
+- ```const removed = arr.shift();``` removes the first element. So ```arr``` is now ```[1]```. ```2``` has been removed and is stored in ```removed```.
+- ```return removed;```, ```2``` is returned.
+- ***Note:*** You don’t actually need the variable ```removed```. The element ```removed``` can be returned directly using ```return arr.shift();```.
+
+## Booleans, Operators, Conditionals
